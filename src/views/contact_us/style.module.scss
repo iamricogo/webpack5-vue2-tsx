@@ -1,0 +1,109 @@
+.contact-us-box {
+  .context-box {
+    display: flex;
+    padding-top: 40px;
+    > div {
+      flex: 1;
+      &.form-text-box {
+        padding: 0 3%;
+        border-right: 1px solid #ccc;
+        .text-box {
+          > h3 {
+            color: #948f94;
+            font-weight: 600;
+            font-size: 20px;
+          }
+          > p {
+            color: #948f94;
+            font-size: 15px;
+            line-height: 20px;
+          }
+        }
+
+        .form-box {
+          padding-top: 30px;
+          .btn-box {
+            :global(.el-button) {
+              width: 34%;
+              color: #fff;
+              background-image: linear-gradient(135deg, #fdd000, #fd9900);
+            }
+          }
+        }
+      }
+      &.map-box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 4%;
+
+        .img-box {
+          position: relative;
+          width: 100%;
+          #map-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+          }
+          img {
+            display: block;
+            width: 100%;
+            height: auto;
+          }
+        }
+        .info-box {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          margin-top: 20px;
+          p {
+            display: flex;
+            width: 100%;
+            color: #8f8f92;
+            > span {
+              width: 10%;
+              margin-top: 2px;
+              font-size: 12px;
+            }
+            b {
+              width: 90%;
+              font-weight: bold;
+              font-size: 13px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+:global(.mobile) {
+  .contact-us-box {
+    .context-box {
+      flex-direction: column;
+      background-color: #f2f2f3;
+      > div {
+        width: 100%;
+        &.form-text-box {
+          margin-bottom: 20px;
+          border-right: none;
+          border-bottom: 2px solid #e15656;
+        }
+
+        &.map-box {
+          .info-box {
+            p {
+              > span {
+                width: 20%;
+              }
+              b {
+                width: 80%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

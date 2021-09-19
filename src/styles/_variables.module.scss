@@ -1,0 +1,24 @@
+/* 此文件会被自动注入每一个经过了loader的xxxx.modules.scss文件中
+  例如：import style from 'xxx/style.module.scss'
+  style.module.scss 中可以直接取$menuBg等变量
+  同时在引入该scss文件的ts/tsx/js/jsx文件中，可以通过style.maxMainWidth 取到抛出的变量
+*/
+
+$menuBg: #0009;
+$menuBgHover: transparent;
+$menuText: #fff;
+$menuActiveText: #fcd404;
+$menuFontSize: 16px;
+$menuHeight: 90px;
+$responsiveWidth: 992px;
+$maxMainWidth: 1600px;
+/* stylelint-disable */
+:export {
+  menuBg: #{$menuBg};
+  menuBgHover: #{$menuBgHover};
+  menuText: #{$menuText};
+  menuActiveText: #{$menuActiveText};
+  menuHeight: #{$menuHeight};
+  responsiveWidth: #{$responsiveWidth};
+  maxMainWidth: #{$maxMainWidth};
+}

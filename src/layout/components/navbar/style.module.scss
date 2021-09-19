@@ -1,0 +1,47 @@
+@mixin menuItem($selector, $font-size: $menuFontSize) {
+  :global(#{$selector}) {
+    height: $menuHeight;
+    font-size: $font-size;
+    line-height: $menuHeight;
+    background-color: $menuBgHover !important;
+    &:hover,
+    &:active,
+    &:focus {
+      color: $menuActiveText !important;
+    }
+  }
+}
+
+.sub-menu-box {
+  background-color: $menuBg;
+  @include menuItem('.el-menu-item', 14px);
+}
+
+.menu {
+  border-bottom: none;
+  @include menuItem('.el-menu-item');
+  @include menuItem('.el-submenu__title');
+  :global(.el-submenu__icon-arrow) {
+    font-size: $menuFontSize;
+  }
+}
+
+.menu-mobile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 80px;
+    margin-top: 25px;
+    padding: 8px 18px;
+    color: #000;
+    border-radius: 15px;
+    cursor: pointer;
+    &.active {
+      background-image: linear-gradient(135deg, #fdd000, #fd9900);
+    }
+  }
+}

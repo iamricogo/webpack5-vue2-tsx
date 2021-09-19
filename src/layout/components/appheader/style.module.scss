@@ -1,0 +1,75 @@
+@mixin menuItem($selector, $font-size: $menuFontSize) {
+  :global(#{$selector}) {
+    min-width: 160px;
+    height: $menuHeight;
+    font-size: $font-size;
+    line-height: $menuHeight;
+    text-align: center;
+    background-color: $menuBgHover !important;
+    &:hover,
+    &:active,
+    &:focus {
+      color: $menuActiveText !important;
+    }
+  }
+}
+
+.sub-menu-box {
+  background-color: $menuBg;
+  @include menuItem('.el-menu-item', 14px);
+}
+
+.app-header {
+  background-color: black;
+  transition: background-color 0.28s;
+  &:global(.scroll-over-top) {
+    background-color: $menuBg;
+  }
+
+  .app-header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: $menuHeight;
+    padding: 0 2%;
+    :global(.el-menu) {
+      display: flex;
+      flex: 1;
+      justify-content: space-around;
+      border-bottom: none;
+      @include menuItem('.el-menu-item');
+      @include menuItem('.el-submenu__title');
+      :global(.el-submenu__icon-arrow) {
+        font-size: $menuFontSize;
+      }
+    }
+
+    .logo {
+      color: white;
+      font-weight: bold;
+      font-size: 20px;
+      font-style: italic;
+      cursor: pointer;
+      @include sprite-size($sprite-main-logo);
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      .menu-switch {
+        margin-left: 20px;
+        color: white;
+        font-size: 30px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &:global(.fixed-header) {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 9;
+    width: 100%;
+  }
+}

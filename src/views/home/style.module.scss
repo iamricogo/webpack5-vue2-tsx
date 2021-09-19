@@ -1,0 +1,130 @@
+.carousel {
+  &.firstimg {
+    @include min-height(math.div(1920, 566), $maxMainWidth);
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  :global(.swiper-button-prev),
+  :global(.swiper-button-next) {
+    color: white;
+    transform: scale(0.8);
+  }
+  :global(.swiper-pagination-bullet) {
+    width: 30px;
+    height: 2px;
+    background-color: white;
+    border-radius: 0;
+    opacity: 0.48;
+    &:global(.swiper-pagination-bullet-active) {
+      opacity: 1;
+    }
+  }
+}
+
+.about_us_entry {
+  display: flex;
+  width: 100%;
+  margin-top: 20px;
+  background-color: #e8e8e8;
+  > div {
+    width: 50%;
+    &:nth-child(1) {
+      > img {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    &:nth-child(2) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 3% 7%;
+      .text_box {
+        margin-top: 40px;
+      }
+      .title {
+        font-weight: 600;
+        font-size: 22px;
+      }
+      .content {
+        margin-top: 10px;
+        font-size: 16px;
+        line-height: 26px;
+      }
+      .footer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 120px;
+        height: 45px;
+        margin-top: 40px;
+        font-weight: bold;
+        background-image: linear-gradient(135deg, #fdd000, #fd9900);
+        border-radius: 20px;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+//手机模式重写
+:global(.mobile) {
+  // .carousel {
+  //   :global(.swiper-button-prev),
+  //   :global(.swiper-button-next) {
+  //     transform: scale(0.25);
+  //   }
+  // }
+
+  .about_us_entry {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0;
+    padding-top: 15px;
+    > div {
+      width: 100%;
+      background-color: #fff;
+      &:nth-child(1) {
+        display: flex;
+        justify-content: center;
+        order: 2;
+        padding: 20px 0;
+        img {
+          width: 80%;
+          height: 100%;
+          border-radius: 50%;
+        }
+      }
+      &:nth-child(2) {
+        order: 1;
+        .content {
+          color: #888;
+          font-size: 16px;
+          line-height: 26px;
+        }
+
+        .footer {
+          display: block;
+          width: 80%;
+          height: 45px;
+          margin-top: 40px;
+          margin-right: auto;
+          margin-left: auto;
+          font-weight: bold;
+          line-height: 45px;
+          text-align: center;
+          background-image: linear-gradient(135deg, #fdd000, #fd9900);
+          border-radius: 20px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

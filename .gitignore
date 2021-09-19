@@ -1,0 +1,10 @@
+node_modules
+.DS_Store
+dist
+dist-ssr
+*.local
+_spritesmith/
+**/*/*.module.scss.d.ts
+**/*/*.module.sass.d.ts
+**/*/*.module.less.d.ts
+**/*/*.module.css.d.ts

@@ -1,0 +1,53 @@
+.app-footer {
+  margin-top: 20px;
+  background-color: black;
+  .app-footer-container {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px 30px;
+    .foot-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      width: 33.33%;
+      height: 100%;
+      .logo {
+        color: white;
+        font-weight: bold;
+        font-size: 20px;
+        font-style: italic;
+        @include sprite-scale($sprite-main-logo, 0.5);
+      }
+      .text {
+        color: white;
+        font-size: 14px;
+        p {
+          line-height: 18px;
+        }
+      }
+    }
+    .foot-right {
+      display: flex;
+      justify-content: flex-end;
+
+      img {
+        display: inline-block;
+        width: 70%;
+        height: auto;
+      }
+    }
+  }
+}
+
+:global(.mobile) {
+  .app-footer {
+    .app-footer-container {
+      flex-direction: column;
+      .foot-left {
+        width: 100%;
+      }
+    }
+  }
+}
