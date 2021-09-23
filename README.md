@@ -75,13 +75,9 @@ npm i
 ### development 模式
 
 ```bash
-npm run dev:dev #代理 dev 环境 api
-npm run dev:test #代理 test 环境 api
-npm run dev:pre #代理预发布环境 api
+npm start #代理 dev 环境 api
 
-yarn dev:dev
-yarn dev:test
-yarn dev:pre
+yarn start
 ```
 
 ### production 模式
