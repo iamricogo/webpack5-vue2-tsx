@@ -69,20 +69,21 @@ feat: 添加xxx页面
 ### 依赖安装
 
 ```bash
-npm i
+yarn
 ```
 
 ### development 模式
 
 ```bash
-npm start #代理 dev 环境 api
-
 yarn start
+npm start #代理 dev 环境 api
 ```
 
 ### production 模式
 
 ```bash
+yarn build #用 yarn 可省略 run 关键字
+
 npm run build #传统构建，代码 es5 化，能兼容到 IE11，目前 jenkins 中用的是此种构建，更稳一点
 
 npm run build:modern #现代化构建，es6 及更高版本 modules 规范，支持现代化高级浏览器，class 等语法均不会换成基于原型链的构造函数
